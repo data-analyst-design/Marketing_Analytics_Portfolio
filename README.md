@@ -1,157 +1,228 @@
-# Marketing Performance Dashboard | Power BI
-
-## Project Overview
-
-This project analyzes marketing performance across multiple business functions, including website conversions, social media engagement, and customer reviews. The objective was to transform raw marketing data into actionable business insights through an interactive Power BI dashboard.
-
-The dashboard enables business stakeholders to monitor key marketing KPIs, identify performance trends, evaluate customer behavior, and make data-driven decisions to improve marketing effectiveness and customer satisfaction.
-
----
+# 📊 Marketing Performance Analytics Dashboard
 
 ## Business Problem
 
-Marketing teams generate large amounts of data from customer journeys, social media campaigns, and customer reviews. However, without a centralized reporting solution, it becomes difficult to answer important business questions such as:
+Marketing teams collect vast amounts of data from website interactions, social media campaigns, and customer reviews. While this data is valuable, it often exists in separate systems, making it difficult to understand the complete customer journey or evaluate the effectiveness of marketing efforts.
 
-- Why are customers leaving before making a purchase?
-- Which marketing content generates the highest engagement?
-- Which products convert the best?
+Without a centralized analytics solution, decision-makers struggle to answer critical business questions such as:
+
+- Where are customers dropping off before completing a purchase?
+- Which marketing channels and content generate the highest engagement?
+- Which products drive the highest conversion rates?
 - How satisfied are customers with products and services?
-- What improvements can increase conversions and customer retention?
+- What improvements can increase conversions and enhance the customer experience?
 
-This project addresses these questions through an interactive Power BI dashboard.
+This project demonstrates an end-to-end analytics workflow that transforms raw marketing data into actionable business insights using **SQL**, **Python**, and **Power BI**.
 
 ---
 
-## Business Objectives
+# 🎯 Business Objectives
 
-The dashboard was designed to help stakeholders:
+The dashboard was developed to help stakeholders achieve the following goals:
 
 ### Increase Conversion Rates
 
-- Identify where customers drop off in the purchase journey
-- Measure monthly conversion trends
-- Compare conversion performance across products
-- Recommend strategies to improve conversions
+- Identify where customers abandon the purchasing journey.
+- Analyze conversion performance across products and time.
+- Recommend strategies to improve website conversions.
 
 ### Enhance Customer Engagement
 
-- Measure marketing reach and engagement
-- Compare engagement across different content types
-- Identify high-performing products and campaigns
-- Support future content strategy
+- Measure customer interaction with marketing campaigns.
+- Determine which content types generate the highest engagement.
+- Support data-driven content strategy decisions.
 
-### Improve Customer Feedback
+### Improve Customer Satisfaction
 
-- Monitor customer satisfaction
-- Analyze review sentiment
-- Identify recurring positive and negative feedback
-- Highlight products requiring quality improvements
+- Analyze customer feedback and sentiment.
+- Identify recurring customer concerns.
+- Recommend improvements to products and services.
 
 ---
 
-# Key Performance Indicators (KPIs)
+# 🔄 Project Workflow
 
-- Conversion Rate
-- Customer Engagement Rate
-- Customer Feedback Score (Average Rating)
-
-> **Note:** Average Order Value (AOV) was excluded because transaction revenue data was not available in the dataset.
+```text
+Raw Marketing Data
+        │
+        ▼
+SQL Data Cleaning & Transformation
+        │
+        ▼
+Python Sentiment Analysis
+        │
+        ▼
+Power BI Data Modeling
+        │
+        ▼
+Interactive Dashboard Development
+        │
+        ▼
+Business Insights & Recommendations
+        │
+        ▼
+Stakeholder Presentation
+```
 
 ---
 
-# Dashboard Pages
+# 🗄️ Step 1: Data Cleaning & Transformation (SQL)
 
-## 1. Executive Overview
+Before any analysis could be performed, the raw marketing datasets were cleaned and transformed using SQL Server to ensure data quality and consistency.
 
-Provides a high-level summary of overall business performance, including:
+### Tasks Performed
+
+- Removed duplicate records
+- Handled missing values
+- Standardized inconsistent values
+- Corrected data types
+- Joined multiple datasets
+- Validated data integrity
+- Prepared clean datasets for reporting
+
+### SQL Skills Demonstrated
+
+- SELECT Statements
+- LEFT JOIN
+- CASE Statements
+- Common Table Expressions (CTEs)
+- Aggregate Functions
+- Window Functions
+- Data Cleaning
+- Data Transformation
+
+### Outcome
+
+The result was a clean, structured dataset that served as the foundation for sentiment analysis and dashboard development.
+
+---
+
+# 🐍 Step 2: Advanced Sentiment Analysis (Python)
+
+Customer reviews were analyzed using Python to gain deeper insights into customer opinions beyond numerical ratings.
+
+### Process
+
+The sentiment analysis workflow included:
+
+- Importing review data from SQL Server
+- Text preprocessing and cleaning
+- Sentiment scoring using the VADER Sentiment Analyzer
+- Classifying reviews as:
+  - Positive
+  - Neutral
+  - Negative
+- Comparing sentiment classifications against customer ratings for validation
+
+### Python Libraries Used
+
+- Pandas
+- NLTK
+- VADER Sentiment Analyzer
+- PyODBC
+
+### Insights Generated
+
+- Overall sentiment distribution
+- Positive and negative review trends
+- Product-specific sentiment analysis
+- Negative review hotspots
+- Rating vs. Sentiment validation
+
+The processed sentiment classifications were integrated back into Power BI to enrich the customer review analysis.
+
+---
+
+# 📈 Step 3: Interactive Power BI Dashboard
+
+The cleaned SQL data and Python-generated sentiment analysis were modeled in Power BI to create an interactive dashboard that provides business stakeholders with a comprehensive view of marketing performance.
+
+## Dashboard Pages
+
+### Executive Overview
+
+Provides a high-level summary of overall business performance through key performance indicators and trend analysis.
+
+### Conversion Dashboard
+
+Analyzes the customer purchase journey and identifies where customers abandon the buying process.
+
+### Social Media Dashboard
+
+Measures campaign performance using customer engagement metrics including views, clicks, and likes.
+
+### Customer Reviews Dashboard
+
+Evaluates customer satisfaction through ratings, sentiment analysis, and review trends.
+
+---
+
+# 📊 Key Performance Indicators (KPIs)
+
+The dashboard tracks the following business metrics:
 
 - Conversion Rate
-- Social Media Performance
+- Customer Engagement
 - Customer Feedback Score
-- Monthly Trends
-- Product Performance
+
+> **Note:** Average Order Value (AOV) was not included because transaction revenue data was unavailable.
 
 ---
 
-## 2. Conversion Dashboard
+# 💡 Key Business Insights
 
-Analyzes the customer purchase journey by showing:
+## Conversion Analysis
 
-- Conversion Rate
-- Funnel Analysis
-- Monthly Conversion Trends
-- Product Conversion Rankings
-- Customer Journey Matrix
+- Conversion rates ranged between **8.48% and 11.58%**.
+- The largest customer drop-off occurred between the **Click** and **Purchase** stages.
+- Several products consistently outperformed others in conversion.
+- Monthly conversion trends suggest seasonal purchasing behavior and campaign effectiveness.
 
-Key Insight:
+### Business Insight
 
-The largest customer drop-off occurs between the Click and Purchase stages, representing the biggest opportunity for conversion optimization.
-
----
-
-## 3. Social Media Dashboard
-
-Measures marketing performance across digital channels.
-
-Includes:
-
-- Views
-- Clicks
-- Likes
-- Monthly Engagement Trends
-- Content Type Performance
-- Product Engagement Heatmap
-
-Key Insight:
-
-Marketing campaigns generate strong awareness, but customer interaction declines significantly after viewing content.
+The primary opportunity for increasing revenue lies in optimizing the checkout process and reducing customer abandonment after product interaction.
 
 ---
 
-## 4. Customer Reviews Dashboard
+## Customer Engagement Analysis
 
-Measures customer satisfaction using review ratings and sentiment analysis.
+- Marketing campaigns generated millions of customer views.
+- Clicks and likes were significantly lower than views, indicating strong awareness but relatively low engagement.
+- Blog and Social Media content generally outperformed Video content.
+- Engagement declined toward the end of each year.
 
-Includes:
+### Business Insight
 
-- Average Rating
-- Rating Distribution
-- Sentiment Classification
-- Review Trends
-- Negative Review Hotspots
-- Customer Review Table
-
-Key Insight:
-
-Customer sentiment is largely positive, but recurring complaints about durability and value indicate opportunities for product improvement.
+The business should invest more in high-performing content formats and improve call-to-action strategies to encourage greater customer interaction.
 
 ---
 
-# Key Insights
-
-## Conversion
-
-- Conversion Rate ranged between **8.48% and 11.58%**
-- Significant customer drop-offs occur before purchase
-- Some products consistently outperform others
-- Monthly performance suggests seasonal buying behavior
-
----
-
-## Customer Engagement
-
-- Millions of users viewed marketing content
-- Click-through and engagement rates were considerably lower
-- Blog and Social Media content generally outperformed Video content
-- Engagement declined later in the year
-
----
-
-## Customer Feedback
+## Customer Feedback Analysis
 
 - Average customer rating remained between **3.67 and 3.73**
 - Most customers left 4- and 5-star reviews
 - There's need for quality improvement for products with the highest negative reviews
+
+### Business Insight
+
+Improving product quality and addressing recurring customer complaints can significantly enhance customer satisfaction and increase repeat purchases.
+
+---
+
+# Step 4: Presenting Insights to Stakeholders
+
+To communicate findings effectively, the dashboard insights were summarized in a stakeholder presentation focusing on actionable recommendations rather than technical details.
+
+The presentation included:
+
+- Marketing Performance Trends
+- Conversion Funnel Analysis
+- Customer Engagement Insights
+- Customer Feedback Analysis
+- Strategic Business Recommendations
+- Expected Business Impact
+
+The objective was to enable stakeholders to make informed, data-driven decisions to improve marketing performance and customer experience.
 
 ---
 
@@ -185,52 +256,45 @@ Customer sentiment is largely positive, but recurring complaints about durabilit
 
 ---
 
-# Tools & Technologies
+# 🛠️ Tools & Technologies
 
-- Power BI Desktop
-- Power Query
-- DAX
-- SQL Server
-- Python
-- Excel
+| Category | Tools |
+|-----------|-------|
+| Database | SQL Server |
+| Programming | Python |
+| Python Libraries | Pandas, NLTK, VADER, PyODBC, Matplotlib |
+| Business Intelligence | Power BI Desktop |
+| Data Transformation | Power Query |
+| Analytics | DAX |
+| Data Source | Excel, CSV |
 
 ---
 
-# Skills Demonstrated
+# 🚀 Skills Demonstrated
 
-- Data Cleaning
-- Data Modeling
-- Power Query (ETL)
-- DAX Measures
-- KPI Development
-- Dashboard Design
-- Data Visualization
-- Customer Journey Analysis
-- Marketing Analytics
+- SQL Data Cleaning
+- Data Transformation
+- ETL
+- Python Programming
+- Natural Language Processing (NLP)
 - Sentiment Analysis
-- Business Intelligence
+- Power BI
+- Data Modeling
+- DAX
+- Dashboard Development
+- KPI Reporting
+- Marketing Analytics
+- Customer Journey Analysis
 - Executive Reporting
 - Data Storytelling
+- Business Intelligence
 
 ---
 
-# Project Outcome
-
-This dashboard transforms raw marketing data into an executive reporting solution that enables stakeholders to:
-
-- Monitor marketing performance in real time
-- Identify customer drop-off points
-- Improve marketing ROI
-- Increase customer engagement
-- Improve customer satisfaction
-- Support strategic business decisions with data
-
----
-
-## Author
+# 👤 Author
 
 **Mercy Waruguru**
 
-Data Analyst | Power BI | SQL | Python | Data Visualization | Marketing Analytics
+Data Analyst | SQL | Python | Power BI | Business Intelligence | Marketing Analytics
 
-Feel free to connect with me on LinkedIn and explore my other analytics projects.
+If you found this project interesting, feel free to ⭐ the repository or connect with me on LinkedIn.
