@@ -262,7 +262,7 @@ The objective was to enable stakeholders to make informed, data-driven decisions
 |-----------|-------|
 | Database | SQL Server |
 | Programming | Python |
-| Python Libraries | Pandas, NLTK, VADER, PyODBC, Matplotlib |
+| Python Libraries | Pandas, NLTK, VADER, PyODBC |
 | Business Intelligence | Power BI Desktop |
 | Data Transformation | Power Query |
 | Analytics | DAX |
